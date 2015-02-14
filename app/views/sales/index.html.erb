@@ -1,0 +1,41 @@
+<table border='1'>
+  <tr>
+    <th>
+      Email
+    </th>
+    <th>
+      Shipping Address
+    </th>
+    <th>
+      Pedal
+    </th>
+    <th>
+      Price Range
+    </th>
+    <th>Time</th>
+
+  </tr>
+  <% @sales.each do |sale| %>
+  <tr>
+    <td>
+      <%= sale.email %>
+    </td>
+    <td>
+      <%= sale.shipping_address %>
+    </td>
+    <td>
+      <%= sale.pedal.name %>
+    </td>
+    <td>
+      <%= sale.pedal.min_price %> - <%= sale.pedal.max_price %>
+    </td>
+    <td>
+      <%= sale.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to pedals_path do %>
+Back to Pedals
+<% end %>

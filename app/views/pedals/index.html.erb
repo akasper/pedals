@@ -1,0 +1,29 @@
+<% if flash[:errors] %>
+  <%= flash[errors].first %>
+<% end %>
+
+<h1>Sell a Pedal</h1>
+
+<%= form_for @sale do |f| %>
+  <%= f.hidden_field :pedal_id %>
+
+  <%= f.label :pedal_name %>
+  <%= f.autocomplete_field :pedal_name, autocomplete_pedal_name_sales_path, id_element: '#sale_pedal_id' %>
+
+  <br/>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <br/>
+  <%= f.label :shipping_address %>
+  <%= f.text_field :shipping_address %>
+
+  <br/>
+  <%= f.submit 'Sell', data: {confirm: 'By submitting this form, you agree to the terms of service. Do you wish to continue?'} %>
+<% end %>
+
+<br/>
+<br/>
+<br/>
+<a href='/tos.html'>Terms of Service</a>
+
