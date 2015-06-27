@@ -10,6 +10,6 @@ class PedalsController < ApplicationController
   end
 
   def sell
-    @pedal = Pedal.find_by_name(params[:id])
+    @pedal = Pedal.find_by_name(params[:pedal_id])
   end
 end
