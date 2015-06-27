@@ -1,29 +1,28 @@
-<% if flash[:errors] %>
-  <%= flash[errors].first %>
-<% end %>
+<div class='titlebar'>
+  <a href='./sell.html'>sell</a>
+  <a href='./explanation.html'>how it works</a>
+  <a href='./tracking.html'>track my order</a>
+  <a href='mailto:fartmaster@yourmom.com'>contact</a>
+</div>
 
-<h1>Sell a Pedal</h1>
+<div class='main'>
+  <h1>voltrevolt</h1>
 
-<%= form_for @sale do |f| %>
-  <%= f.hidden_field :pedal_id %>
+  <div class='embedded-video'>VIDEO GOES HERE</div>
+  <div>
+    <%= form_for @pedal do |f| %>
+      <%= f.hidden_field :id %>
 
-  <%= f.label :pedal_name %>
-  <%= f.autocomplete_field :pedal_name, autocomplete_pedal_name_sales_path, id_element: '#sale_pedal_id' %>
+      <%= f.label :pedal_name %>
+      <%= f.autocomplete_field :name, 'pedals/autocomplete_pedal_name' %>
 
-  <br/>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+    <% end %>
+  </div>
+</div>
 
-  <br/>
-  <%= f.label :shipping_address %>
-  <%= f.text_field :shipping_address %>
-
-  <br/>
-  <%= f.submit 'Sell', data: {confirm: 'By submitting this form, you agree to the terms of service. Do you wish to continue?'} %>
-<% end %>
-
-<br/>
-<br/>
-<br/>
-<a href='/tos.html'>Terms of Service</a>
-
+<div class='footer'>
+  <a href='./about.html'>about us</a>
+  <a href='./tos.html'>terms and conditions</a>
+  <a href='./privacy_policy.html'>privacy policy</a>
+  <a href='./faq.html'</a>
+</div>

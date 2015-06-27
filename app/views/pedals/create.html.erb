@@ -1,0 +1,12 @@
+<div>
+  <h3>Here is what we can offer:</h3>
+  <%= @pedal.name %> <br/>
+
+  <h1>$<%= @pedal.min_price %> to $<%= @pedal.max_price %></h1>
+
+  <form accept-charset="UTF-8" action="/pedals/<%= @pedal.name %>/sell" class="sell_pedal" id="sell_pedal" method="post">
+    <input type="submit" value="Yes!!">
+  </form>
+
+  </form>
+</div>

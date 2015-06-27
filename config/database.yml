@@ -13,5 +13,5 @@ development:
   host: localhost
   database: pedals-development
   pool: 5
-  username: pedals
+  username: postgres
   # password: password
